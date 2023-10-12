@@ -28,7 +28,7 @@
     }
 
     #remain {
-        color: palevioletred;
+        color: #ff0000;
         font-size: 20px;
         font-weight: bold;
         text-align: center;
@@ -44,6 +44,7 @@
         text-align: center;
         position:absolute; top:340px; 
         left:10px; right:10px;
+        margin: 0 auto;
     }
     
     #mycanvas {
