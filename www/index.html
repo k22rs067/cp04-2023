@@ -236,7 +236,7 @@
       m = parseInt(period/60);
       s = parseInt(period - m * 60); 
       $("#time").html("経過時間: 0");
-      $("#remain").html("残り時間: " + m + "分" + s );
+      $("#remain").html("残り時間: " + m + "分" + s + "秒");
       $("#btnA").prop("disabled", false);
     }
 
@@ -247,7 +247,7 @@
       m = parseInt(period/60);
       s = parseInt(period - m * 60); 
       $("#time").html("経過時間: 0");
-      $("#remain").html("残り時間: " + m + "分" + s );
+      $("#remain").html("残り時間: " + m + "分" + s + "秒");
       $("#btnA").prop("disabled", false);
     }
     function btnFClick(e){
@@ -257,7 +257,7 @@
       m = parseInt(period/60);
       s = parseInt(period - m * 60); 
       $("#time").html("経過時間: 0");
-      $("#remain").html("残り時間: " + m + "分" + s );
+      $("#remain").html("残り時間: " + m + "分" + s + "秒");
       $("#btnA").prop("disabled", false);
     }
 
@@ -268,7 +268,7 @@
       m = parseInt(period/60);
       s = parseInt(period - m * 60); 
       $("#time").html("経過時間: 0");
-      $("#remain").html("残り時間: " + m + "分" + s );
+      $("#remain").html("残り時間: " + m + "分" + s + "秒");
       $("#btnA").prop("disabled", false);
     }
  
@@ -280,7 +280,7 @@
         m = parseInt(rest/60);
         s = parseInt(rest - m * 60);
         $("#time").html("経過時間: " + time );
-        $("#remain").html("残り時間: " + m + "分" + s);   
+        $("#remain").html("残り時間: " + m + "分" + s + "秒");   
         analog(rest);
         
         if (rest >= 3600) {
