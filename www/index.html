@@ -46,6 +46,13 @@
         $('#btnE').click(function(e) {
             btnEClick(e);
         });
+        $('#btnF').click(function(e) {
+            btnFClick(e);
+        });
+
+        $('#btnG').click(function(e) {
+            btnGClick(e);
+        });
         init();
     });
     
@@ -174,7 +181,8 @@
         $('#btnC').prop('disabled', false);
         $('#btnD').prop('disabled', false);
         $('#btnE').prop('disabled', false);
-        
+        $('#btnF').prop('disabled', false);
+        $('#btnG').prop('disabled', false);       
     }
 
     // Alarmの処理
@@ -229,6 +237,7 @@
       s = parseInt(period - m * 60); 
       $("#time").html("経過時間: 0");
       $("#remain").html("残り時間: " + m + "分" + s );
+      $("#btnA").prop("disabled", false);
     }
 
     function btnEClick(e){
@@ -239,8 +248,29 @@
       s = parseInt(period - m * 60); 
       $("#time").html("経過時間: 0");
       $("#remain").html("残り時間: " + m + "分" + s );
+      $("#btnA").prop("disabled", false);
     }
-    
+    function btnFClick(e){
+      active = false;
+      startTime = 30;
+      period = 60 * parseInt(startTime);
+      m = parseInt(period/60);
+      s = parseInt(period - m * 60); 
+      $("#time").html("経過時間: 0");
+      $("#remain").html("残り時間: " + m + "分" + s );
+      $("#btnA").prop("disabled", false);
+    }
+
+    function btnGClick(e){
+      active = false;
+      startTime = 60;
+      period = 60 * parseInt(startTime);
+      m = parseInt(period/60);
+      s = parseInt(period - m * 60); 
+      $("#time").html("経過時間: 0");
+      $("#remain").html("残り時間: " + m + "分" + s );
+      $("#btnA").prop("disabled", false);
+    }
  
     // 繰り返し実行する処理
     function timer(){  
@@ -252,10 +282,19 @@
         $("#time").html("経過時間: " + time );
         $("#remain").html("残り時間: " + m + "分" + s);   
         analog(rest);
+        
+        if (rest >= 3600) {
+            $("body").css("background-color", "black");
+        }else if (rest <= 60){
+            $("body").css("background-color", "orange");
+        }else {
+            $("body").css("background-color", "azure");
+        }
 
         if (rest <= 0){
             active = false;
             alarm();
+            document.body.style.backgroundColor = "azure"; 
         }
       }
     }
@@ -265,8 +304,6 @@
 <body>
     <canvas id="mycanvas" width="200" height="200">Test</canvas>
 
-    <div id="minuteStr">〇</div>
-    <div id="secondStr">〇</div>
 
     <div id="remain">Remaining time</div>
     <div id="time">Time</div>
@@ -275,6 +312,8 @@
     <button id="btnC">TimeSet</button>  
     <button id="btnD">5 minute</button>
     <button id="btnE">15 minute</button>
+    <button id="btnF">30 minute</button>
+    <button id="btnG">60 minute</button>
     <input type="number" id="minute" value=0 >
     <input type="number" id="second" value=0 >
 </body>
